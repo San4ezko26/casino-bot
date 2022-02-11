@@ -16,7 +16,7 @@ from misc import repl, repldate, isfloat, bill_create, repl_percent
 tickets = '5209864818:AAHYQQWUPJf_AbroKl1xiKQZmbjoHiMRJ9Q' # TOKEN Бота воркера
 bot = telebot.TeleBot('5279816812:AAHgjcN-0U31xrr1I4_bbPMey_kf5oU1Hes') # TOKEN Бота казино
 
-admin = 5191091622 # ID Админа
+admin = 5259188215 # ID Админа
 support_id = 2100640233 # ID Саппорта
 channel_id = -1001617828637 # ID Канала с вылатами
 support = '@play2x_support' # Username Сапорта

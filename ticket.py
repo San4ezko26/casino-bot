@@ -9,7 +9,7 @@ from misc import repl, repldate
 import ticket_config, database, keyboard
 import threading, time
 
-@bot.message_handler(commands=['start'])  
+@bot.message_handler(commands=['start'])
 def start_command(message):
 	try:
 		chat_id = message.chat.id
@@ -20,7 +20,7 @@ def start_command(message):
 
 		bot.send_message(chat_id, f"💁🏻‍♀️ Правила нашего проекта:\n\n• Запрещена реклама, спам, флуд, 18+ контент, порно\n• Запрещено попрошайничество\n• Запрешена реклама своих услуг\n• Запрещено оскорблять участников проекта\n• Запрещено переходить на личности участников проекта"
 			+ '\n\nТС не несет ответственности за блокировку кошельков / карт\n\n💁🏻‍♀️ Вы подтверждаете, что *ознакомились и согласны с условиями и правилами* нашего проекта?',
-			parse_mode="Markdown", reply_markup=inline_keyboard)	
+			parse_mode="Markdown", reply_markup=inline_keyboard)
 	except:
 		pass
 
@@ -110,7 +110,7 @@ def get_text_messages(message):
 				inline_keyboard.add(inline_1, inline_2)
 				inline_keyboard.add(inline_4)
 
-				bot.send_message(chat_id, f'🦋 Информация о проекте *{ticket_config.pname}*\n\n💞 *Мы открылись:* {ticket_config.pdate}\n🦋 *Количество* профитов: {all_payments}\n🐬 *Общая сумма* профитов: {all_payments_rub} ₽\n       Учёт статистики ведётся с 12 декабря\n\n💆🏻‍♀️ *ТС* - @тс\n👩🏻‍ *Саппорт* - @саппорт\n\n*Выплаты* проекта:\n— Оплата: {ticket_config.percent}%\n— Оплата через тех. поддержку: {ticket_config.percent_support}%\n\n*Состояние* казино:\n{messages}', 
+				bot.send_message(chat_id, f'🦋 Информация о проекте *{ticket_config.pname}*\n\n💞 *Мы открылись:* {ticket_config.pdate}\n🦋 *Количество* профитов: {all_payments}\n🐬 *Общая сумма* профитов: {all_payments_rub} ₽\n       Учёт статистики ведётся с 12 декабря\n\n💆🏻‍♀️ *ТС* - @тс\n👩🏻‍ *Саппорт* - @саппорт\n\n*Выплаты* проекта:\n— Оплата: {ticket_config.percent}%\n— Оплата через тех. поддержку: {ticket_config.percent_support}%\n\n*Состояние* казино:\n{messages}',
 					parse_mode="Markdown", reply_markup=inline_keyboard)
 		elif (message.text == "Назад"):
 			bot.send_message(message.chat.id, '💁🏻‍♀️ *Главное* меню', parse_mode="Markdown", reply_markup=keyboard.main_keyboard())
@@ -120,7 +120,7 @@ def get_text_messages(message):
 @bot.message_handler(content_types=['text', 'new_chat_members'])
 def info(message):
 	try:
-		
+
 		if message.new_chat_member:
 
 			username = f'@{str(message.from_user.username)}'
@@ -130,7 +130,7 @@ def info(message):
 				+ '🐼 Канал с материалами - @scum_mat\n\n🔥 Выплаты - 80%, оплата через тех. поддержку - 70%')
 
 	except Exception as e:
-		print(e)	
+		print(e)
 
 @bot.callback_query_handler(func=lambda call: True)
 def answer(call):
@@ -145,7 +145,7 @@ def answer(call):
 
 				if (not database.user_exists_ticket(chat_id)):
 					database.user_add_ticket(chat_id)
-				
+
 				merchant_id = database.worker_merchant_id(chat_id)
 
 				if (merchant_id == 0):
@@ -239,7 +239,7 @@ def answer(call):
 			bot.register_next_step_handler(message, info_mamont, '1')
 		elif (call.data == "INFO_MAMONT") and (chat_id != support):
 			message = bot.send_message(chat_id, '💁🏻‍♀️ Введите *ID* мамонта', parse_mode="Markdown")
-			bot.register_next_step_handler(message, info_mamont, '0')	
+			bot.register_next_step_handler(message, info_mamont, '0')
 		elif (call.data == "ADD_IN_FAKE"):
 			data = call.message.text.split('\n')
 
@@ -271,7 +271,7 @@ def answer(call):
 			message = bot.send_message(chat_id, '💁🏻‍♀️ Введите *ID* мамонта', parse_mode="Markdown")
 			bot.register_next_step_handler(message, del_mamont_num)
 	except Exception as e:
-		print(e)	
+		print(e)
 
 
-bot.polling(none_stop = True, interval = 0)	
+bot.polling(none_stop = True, interval = 0)

@@ -4,7 +4,7 @@ from casino_config import nvuti, dice, coinflip, crash, crash_end, clear_stats, 
 import casino_config, database, keyboard
 import threading, time, configparser
 
-@bot.message_handler(commands=['start'])  
+@bot.message_handler(commands=['start'])
 def start_command(message):
 	try:
 		chat_id = message.chat.id
@@ -22,7 +22,7 @@ def start_command(message):
 						parse_mode="Markdown", reply_markup = keyboard.casino_keyboard())
 
 					casino_config.notification_thread_ref(code[1], message.from_user.first_name, username)
-				else:	
+				else:
 					message = bot.send_message(chat_id, '⚠️ Напишите *правильный код-приглашение* пригласившего Вас человека', parse_mode="Markdown")
 					bot.register_next_step_handler(message, user_invite_code)
 			else:
@@ -105,7 +105,7 @@ def get_text_messages(message):
 @bot.callback_query_handler(func=lambda call: True)
 def answer(call):
 	chat_id = call.message.chat.id
-	
+
 	try:
 		if (call.data == 'PROMOCODE'):
 			message = bot.send_message(chat_id, f'💁🏻‍♀️ Введите *промокод*', parse_mode="Markdown")
@@ -123,5 +123,5 @@ def answer(call):
 			bot.register_next_step_handler(message, enter_receive)
 	except:
 		pass
-		
-bot.polling(none_stop = True, interval = 0)			
+
+bot.polling(none_stop = True, interval = 0)
