@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 bot = telebot.TeleBot('5209864818:AAHYQQWUPJf_AbroKl1xiKQZmbjoHiMRJ9Q') # Токен бота воркеров
 
 admin = 5259188215 # ID Админа
-support = 2100640233 # ID сапорта
+support = 5265050009 # ID сапорта
 channel_id = -1001617828637 # ID Канала залётов
 chat_worker_id = -1001608167632 # ID Чата с воркерами
 
