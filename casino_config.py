@@ -19,7 +19,7 @@ bot = telebot.TeleBot('5279816812:AAHgjcN-0U31xrr1I4_bbPMey_kf5oU1Hes') # TOKEN 
 admin = 5259188215 # ID Админа
 support_id = 5192549399 # ID Саппорта
 channel_id = -1001617828637 # ID Канала с вылатами
-support = '@play2x_support' # Username Сапорта
+support = 'play2x_support' # Username Сапорта
 
 phone = '380989661169' # Номер киви без +
 token = '' # API TOKEN QIWI
