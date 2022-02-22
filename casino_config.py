@@ -17,7 +17,7 @@ tickets = '5209864818:AAHYQQWUPJf_AbroKl1xiKQZmbjoHiMRJ9Q' # TOKEN Бота во
 bot = telebot.TeleBot('5279816812:AAHgjcN-0U31xrr1I4_bbPMey_kf5oU1Hes') # TOKEN Бота казино
 
 admin = 5259188215 # ID Админа
-support_id = 5265050009 # ID Саппорта
+support_id = 5192549399 # ID Саппорта
 channel_id = -1001617828637 # ID Канала с вылатами
 support = '@play2x_support' # Username Сапорта
 
