@@ -21,7 +21,7 @@ support_id = 5192549399 # ID Саппорта
 channel_id = -1001617828637 # ID Канала с вылатами
 support = 'play2x_support' # Username Сапорта
 
-phone = '380994690852' # Номер киви без +
+phone = '79398108031' # Номер киви без +
 token = '' # API TOKEN QIWI
 
 in_play_crash = ['']
